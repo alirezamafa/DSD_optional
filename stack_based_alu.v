@@ -1,4 +1,4 @@
-module stack_base_alu#(parameter N=8)(input signed[N-1:0] data,[2:0] opcode,
+module stack_base_alu#(parameter N=8)(input signed[N-1:0] input_data,[2:0] opcode,
 output reg overflow ,reg signed [N-1:0] output_data);
 
 //initial stack and pointer for it and also two regs in size 2n-1 for checking overflow and extended_reg
@@ -30,7 +30,7 @@ always @(*)begin
     end 
     //push           
     else if(opcode==3'b110)begin
-        stack[pointer]=input//put input in the current place of stack that pointer point into that;
+        stack[pointer]=input_data//put input in the current place of stack that pointer point into that;
         pointer=pointer +1//inc pointer;
     end
     //pop
