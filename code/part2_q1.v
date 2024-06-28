@@ -1,7 +1,7 @@
 checkcheckmodule postfix #((parameter N=8)(
   input signed [N-1:0] char,
   input wire check,
-  input wire the_end,
+  input wire is_free,
   output reg signed [N-1:0] fianl_out
 );
   reg [2:0] op_opcode;
@@ -63,7 +63,7 @@ checkcheckmodule postfix #((parameter N=8)(
     #10; 
     num_opcode = 3'bxxx;
     
-    if (the_end) begin
+    if (is_free) begin
       forever begin : loop1
         op_opcode =3'b111;
         #10;
