@@ -1,4 +1,4 @@
-checkcheckmodule postfix #((parameter N=8)(
+module postfix #((parameter N=8)(
   input signed [N-1:0] char,
   input wire check,
   input wire is_free,
